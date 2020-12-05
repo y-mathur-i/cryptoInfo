@@ -84,7 +84,7 @@ router.get('/',(request,response)=>{
 
 // GET using the name of the coin
 router.get('/:coinName',(request,response)=>{
-    const name = request.params.coinName;
+    const name = request.params.coinName.toLowerCase();
     getSpecific(name).then(body =>{
         const $ = cheerio.load(body)
         // console.log($.html())
